@@ -41,7 +41,7 @@ class TicTacToe
  end 
  
   def valid_move?(idx) 
-    idx.between?(0, 8) && !(self.position_taken?(idx))
+    idx.between?(0, 8) && !(position_taken?(idx))
   end 
   
   def turn_count
