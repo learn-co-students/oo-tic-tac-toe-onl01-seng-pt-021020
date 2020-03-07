@@ -49,7 +49,22 @@ class TicTacToe
   end 
   
   def current_player
+    (self.turn_count.even?) ? "X" : "O"
   end 
+  
+  def turn 
+    input = gets.chomp #asks the user for input 
+    puts input 
+    index = self.input_to_index(input)
+    token = self.current_player
+    
+    if self.valid_move?(index)
+      self.move(index, token)
+      self.display_board
+    end 
+  end
+end 
+
   
   
  
