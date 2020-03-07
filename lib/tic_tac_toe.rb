@@ -31,18 +31,26 @@ class TicTacToe
    end 
    
    def position_taken?(idx)
-     if @board[idx] == " "
-       return false 
-     else 
-       return true 
-     end 
-     #(@board[idx] == " ") ? false : true 
+     #if @board[idx] == " "
+       #return false 
+     #else 
+       #return true 
+     #end 
+     (@board[idx] == " ") ? false : true 
    end 
  end 
  
   def valid_move?(idx) 
     idx.between?(0, 8) && !(self.position_taken?(idx))
   end 
+  
+  def turn_count
+    @board.count("X") + @board.count("O")
+  end 
+  
+  def current_player
+  end 
+  
   
  
        
