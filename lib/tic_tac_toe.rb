@@ -63,7 +63,6 @@ class TicTacToe
       self.display_board
     end 
   end
-end 
 
   
   
