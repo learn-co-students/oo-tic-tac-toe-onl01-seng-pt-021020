@@ -38,15 +38,11 @@ class TicTacToe
      end 
      #(@board[idx] == " ") ? false : true 
    end 
-     
-     def valid_move?(idx)
-       idk.between?(0,8) && !(self.position_taken?(idx))
-     end 
-     
-     def turn_count
-       @board.count("X") + @board.count("O")
-     end
-     
-       
+ end 
+ 
+ def valid_move?(idx)
+   idx.between?(0, 8) && !(self.position_taken?(idx))
+ end 
+ 
        
    
