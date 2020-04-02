@@ -71,6 +71,17 @@ class TicTacToe
     !(@board.include?(' '))
   end
 
+  def won?
+    won_combo = []
+    WIN_COMBINATIONS.each do |array|
+
+  end
+
+  def draw?
+
+
+  end
+
 
 
 
