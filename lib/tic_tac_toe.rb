@@ -76,6 +76,7 @@ class TicTacToe
     WIN_COMBINATIONS.each do |array|
       if @board(array[0]) == @board(array[1]) && @board(array[1]== @board(array[2])
         win_combo = arr
+      end
     end
   end
 
