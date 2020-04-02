@@ -90,10 +90,10 @@ class TicTacToe
   end
 
   def winner
-    if self.won?
-      @board[self.won?[0]]
-    else
+    if !self.won?
       nil
+    else self.won?
+      @board[self.won?[0]]
     end
   end
 
@@ -105,10 +105,6 @@ class TicTacToe
       puts "Cat's Game!"
     end
   end
-
-
-
-
 
 
 
