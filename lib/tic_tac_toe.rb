@@ -30,14 +30,22 @@ class TicTacToe
      @board[idx] = char
    end
 
-   def position_taken?(idx)
-     #if @board[idx] == " "
-       #return false
-     #else
-       #return true
-     #end
-     (@board[idx] == " ") ? false : true
-   end
+   def position_taken?(index)
+    if @board[index] != "X" && @board[index] != "O"
+      false
+    else
+      true
+    end
+  end
+
+  #  def position_taken?(idx)
+  #    #if @board[idx] == " "
+  #      #return false
+  #    #else
+  #      #return true
+  #    #end
+  #    (@board[idx] == " ") ? false : true
+  #  end
 
   def valid_move?(idx)
     idx.between?(0, 8) && !(position_taken?(idx))
