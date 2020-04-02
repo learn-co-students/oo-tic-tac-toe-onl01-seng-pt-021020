@@ -74,7 +74,7 @@ class TicTacToe
   def won?
     win_combo = nil
     WIN_COMBINATIONS.each do |arr|
-      if @board[arr[0]] == @board[arr[1]] && @board[arr[1]]== @board[arr[2]]
+      if @board[arr[0]] == @board[arr[1]] && @board[arr[1]]== @board[arr[2]] #&& position_taken?[arr[0]]
         win_combo = arr
       end
     end
@@ -90,7 +90,20 @@ class TicTacToe
   end
 
   def winner
-    @board[self.won?[0]]
+    if self.won?
+      @board[self.won?[0]]
+    else
+      nil
+    end
+  end
+
+  def play
+    self.turn while !self.over?
+    if self.won?
+      puts "Congratulations #{winner}!"
+    elsif self.draw?
+      puts "Cat's Game!"
+    end
   end
 
 
