@@ -82,10 +82,16 @@ class TicTacToe
   end
 
   def draw?
-
-
+    !(self.won?) && self.full?
   end
 
+  def over?
+    self.draw? || self.won?
+  end
+
+  def winner
+    @board[self.won?[0]]
+  end
 
 
 
