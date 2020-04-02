@@ -74,7 +74,8 @@ class TicTacToe
   def won?
     won_combo = []
     WIN_COMBINATIONS.each do |array|
-
+      @board(array[0]) == @board(array[1]) && @board(array[1]== @board(array[2])
+    end
   end
 
   def draw?
