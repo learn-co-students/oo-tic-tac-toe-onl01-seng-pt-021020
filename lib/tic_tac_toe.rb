@@ -40,7 +40,7 @@ class TicTacToe
    end
 
   def valid_move?(idx)
-    idx.between?(0, 8) && !(position_taken?(idx))
+    idx.between?(0, 8) && !(self.position_taken?(idx))
   end
 
   def turn_count
@@ -48,7 +48,7 @@ class TicTacToe
   end
 
   def current_player
-    (turn_count.even?) ? "X" : "O"
+    (turn_count.even?) ? 'X' : 'O'
   end
 
   def turn
@@ -74,7 +74,7 @@ class TicTacToe
   def won?
     win_combo = nil
     WIN_COMBINATIONS.each do |arr|
-      if @board[arr[0]] == @board[arr[1]] && @board[arr[1]]== @board[arr[2]] #&& position_taken?[arr[0]]
+      if @board[arr[0]] == @board[arr[1]] && @board[arr[1]]== @board[arr[2]] && position_taken?(arr[0])
         win_combo = arr
       end
     end
@@ -98,15 +98,11 @@ class TicTacToe
   end
 
   def play
-    self.turn while !self.over?
-    if self.won?
+      turn until over?
+       if self.won?
       puts "Congratulations #{winner}!"
-    elsif self.draw?
+       else self.draw?
       puts "Cat's Game!"
     end
   end
-
-
-
-
 end
